@@ -5,16 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
-import {
-  Shield,
-  AlertTriangle,
-  CheckCircle,
-  XCircle,
-  Loader2,
-  Sparkles,
-  FileText,
-  Lock,
-} from "lucide-react";
+import { Shield, AlertTriangle, CheckCircle, XCircle, Loader2, Sparkles, FileText, Lock } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { format } from "date-fns";
 

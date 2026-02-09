@@ -15,6 +15,7 @@ node_modules
 .git
 dist
 dist-ssr
+package-lock.json
 *.local
 
 # Editor directories and files

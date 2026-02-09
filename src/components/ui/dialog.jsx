@@ -5,6 +5,8 @@
 // let me get back to the things i was doing
 // (get it, i put this here because its like a dialog.jsx, dialog? get it??)
 
+// i dont, and shut the hell up
+
 "use client";
 
 import * as React from "react";

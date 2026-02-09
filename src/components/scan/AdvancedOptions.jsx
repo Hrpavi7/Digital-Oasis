@@ -2,15 +2,8 @@ import React, { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import {
-  ChevronDown,
-  ChevronUp,
-  Settings,
-  Calendar,
-  Filter,
-} from "lucide-react";
+import { ChevronDown, ChevronUp, Settings, Calendar, Filter } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-
 import RuleCreator from "./RuleCreator";
 import ScheduleManager from "./ScheduleManager";
 import ActionSelector from "./ActionSelector";
@@ -40,7 +33,6 @@ export default function AdvancedOptions({
           <ChevronDown className="w-5 h-5" />
         )}
       </Button>
-
       <AnimatePresence>
         {isExpanded && (
           <motion.div
@@ -80,14 +72,12 @@ export default function AdvancedOptions({
                       Schedule
                     </TabsTrigger>
                   </TabsList>
-
                   <TabsContent value="action" className="mt-6">
                     <ActionSelector
                       selectedAction={selectedAction}
                       setSelectedAction={setSelectedAction}
                     />
                   </TabsContent>
-
                   <TabsContent value="rules" className="mt-6">
                     <RuleCreator onApplyRules={onApplyRules} />
                   </TabsContent>

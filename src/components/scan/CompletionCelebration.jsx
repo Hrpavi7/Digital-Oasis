@@ -14,7 +14,6 @@ export default function CompletionCelebration({
   return (
     <Card className="border-none shadow-2xl bg-gradient-to-br from-emerald-50 via-cyan-50 to-lavender-50 overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-br from-emerald-200/20 via-transparent to-lavender-200/20" />
-
       <CardContent className="relative p-12 space-y-8 text-center">
         <motion.div
           initial={{ scale: 0 }}
@@ -26,7 +25,6 @@ export default function CompletionCelebration({
             <Sparkles className="w-20 h-20 text-emerald-500" />
           </div>
         </motion.div>
-
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -40,7 +38,6 @@ export default function CompletionCelebration({
             Take a moment to enjoy the calm and clarity you've created.
           </p>
         </motion.div>
-
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}

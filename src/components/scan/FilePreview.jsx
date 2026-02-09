@@ -1,24 +1,9 @@
 import React, { useState } from "react";
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-  DialogDescription,
-} from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
-import {
-  X,
-  ExternalLink,
-  FileText,
-  Image as ImageIcon,
-  File,
-  Calendar,
-  HardDrive,
-  FolderOpen,
-} from "lucide-react";
+import { X, ExternalLink, FileText, Image as ImageIcon, File, Calendar, HardDrive, FolderOpen } from "lucide-react";
 import { format } from "date-fns";
 
 const PREVIEW_CONTENT = {
@@ -123,7 +108,6 @@ export default function FilePreview({
         </div>
       );
     }
-
     if (previewData.type === "document") {
       return (
         <div className="relative rounded-xl overflow-hidden bg-gradient-to-br from-blue-50 to-blue-100 aspect-video flex items-center justify-center">
@@ -143,7 +127,6 @@ export default function FilePreview({
         </div>
       );
     }
-
     if (previewData.type === "video") {
       return (
         <div className="relative rounded-xl overflow-hidden bg-gray-900 aspect-video flex items-center justify-center">
@@ -172,7 +155,6 @@ export default function FilePreview({
         </div>
       );
     }
-
     if (
       previewData.type === "text" ||
       previewData.type === "cache" ||
@@ -184,7 +166,6 @@ export default function FilePreview({
         </div>
       );
     }
-
     return (
       <div className="rounded-xl bg-gray-100 aspect-video flex items-center justify-center">
         <div className="text-center p-8">
@@ -196,7 +177,6 @@ export default function FilePreview({
       </div>
     );
   };
-
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
@@ -209,12 +189,8 @@ export default function FilePreview({
             Review this file before taking action
           </DialogDescription>
         </DialogHeader>
-
         <div className="space-y-6 mt-4">
-          {/* File Preview */}
           {renderPreview()}
-
-          {/* File Metadata */}
           <Card className="border-sage-200">
             <CardContent className="p-6">
               <div className="grid md:grid-cols-2 gap-4">
@@ -227,7 +203,6 @@ export default function FilePreview({
                     </p>
                   </div>
                 </div>
-
                 <div className="flex items-start gap-3">
                   <Calendar className="w-5 h-5 text-gray-500 mt-0.5" />
                   <div>
@@ -239,7 +214,6 @@ export default function FilePreview({
                     </p>
                   </div>
                 </div>
-
                 <div className="flex items-start gap-3">
                   <FolderOpen className="w-5 h-5 text-gray-500 mt-0.5" />
                   <div>
@@ -249,7 +223,6 @@ export default function FilePreview({
                     <p className="text-sm text-gray-600">{file.category}</p>
                   </div>
                 </div>
-
                 <div className="flex items-start gap-3">
                   <FileText className="w-5 h-5 text-gray-500 mt-0.5" />
                   <div>
@@ -260,7 +233,6 @@ export default function FilePreview({
                   </div>
                 </div>
               </div>
-
               <div className="mt-4 p-4 bg-amber-50 rounded-lg border border-amber-200">
                 <p className="text-sm text-amber-900">
                   <strong>Why this file was flagged:</strong> {file.reason}
@@ -268,14 +240,11 @@ export default function FilePreview({
               </div>
             </CardContent>
           </Card>
-
-          {/* Action Buttons */}
           <div className="flex flex-wrap gap-3 justify-end pt-4 border-t">
             <Button variant="outline" onClick={onClose} className="gap-2">
               <X className="w-4 h-4" />
               Keep File
             </Button>
-
             <Button
               variant="outline"
               onClick={() => {
@@ -287,7 +256,6 @@ export default function FilePreview({
               <FolderOpen className="w-4 h-4" />
               Archive
             </Button>
-
             <Button
               variant="outline"
               onClick={() => {
@@ -299,7 +267,6 @@ export default function FilePreview({
               <HardDrive className="w-4 h-4" />
               Compress
             </Button>
-
             <Button
               onClick={() => {
                 onDelete();
