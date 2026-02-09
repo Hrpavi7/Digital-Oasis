@@ -1,0 +1,49 @@
+{
+  "name": "SecurityAudit",
+  "type": "object",
+  "properties": {
+    "audit_date": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When the audit was performed"
+    },
+    "security_score": {
+      "type": "number",
+      "description": "Overall security score (0-100)"
+    },
+    "vulnerabilities": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      },
+      "description": "List of vulnerabilities found"
+    },
+    "recommendations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Security recommendations"
+    },
+    "files_scanned": {
+      "type": "number",
+      "description": "Number of files scanned"
+    },
+    "issues_found": {
+      "type": "number",
+      "description": "Number of issues found"
+    },
+    "critical_issues": {
+      "type": "number",
+      "default": 0,
+      "description": "Number of critical issues"
+    },
+    "status": {
+      "type": "string",
+      "enum": ["completed", "in_progress", "failed"],
+      "default": "completed",
+      "description": "Audit status"
+    }
+  },
+  "required": []
+}

@@ -1,0 +1,57 @@
+{
+  "name": "WorkflowTemplate",
+  "type": "object",
+  "properties": {
+    "template_name": {
+      "type": "string",
+      "description": "Name of the workflow template"
+    },
+    "description": {
+      "type": "string",
+      "description": "What this workflow does"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "reporting",
+        "organization",
+        "backup",
+        "cleanup",
+        "project_setup"
+      ],
+      "description": "Template category"
+    },
+    "steps": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      },
+      "description": "Workflow steps"
+    },
+    "estimated_time": {
+      "type": "string",
+      "description": "Estimated time to complete"
+    },
+    "ai_generated": {
+      "type": "boolean",
+      "default": false,
+      "description": "Whether AI suggested this template"
+    },
+    "is_active": {
+      "type": "boolean",
+      "default": false,
+      "description": "Whether template is activated"
+    },
+    "execution_count": {
+      "type": "number",
+      "default": 0,
+      "description": "How many times executed"
+    },
+    "last_executed": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Last execution time"
+    }
+  },
+  "required": []
+}

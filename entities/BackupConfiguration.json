@@ -1,0 +1,61 @@
+{
+  "name": "BackupConfiguration",
+  "type": "object",
+  "properties": {
+    "backup_name": {
+      "type": "string",
+      "description": "Name of the backup configuration"
+    },
+    "backup_type": {
+      "type": "string",
+      "enum": ["full", "incremental", "differential"],
+      "default": "incremental",
+      "description": "Type of backup"
+    },
+    "schedule": {
+      "type": "string",
+      "enum": ["daily", "weekly", "monthly", "custom"],
+      "default": "weekly",
+      "description": "Backup frequency"
+    },
+    "backup_location": {
+      "type": "string",
+      "enum": ["cloud", "local", "both"],
+      "default": "cloud",
+      "description": "Where to store backups"
+    },
+    "folders_to_backup": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "List of folder paths to backup"
+    },
+    "retention_days": {
+      "type": "number",
+      "default": 30,
+      "description": "How many days to keep backups"
+    },
+    "is_active": {
+      "type": "boolean",
+      "default": true,
+      "description": "Whether backup is active"
+    },
+    "ai_optimized": {
+      "type": "boolean",
+      "default": false,
+      "description": "Whether AI suggested this config"
+    },
+    "last_backup": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Last backup timestamp"
+    },
+    "next_backup": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Next scheduled backup"
+    }
+  },
+  "required": []
+}

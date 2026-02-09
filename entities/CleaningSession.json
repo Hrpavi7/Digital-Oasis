@@ -1,0 +1,35 @@
+{
+  "name": "CleaningSession",
+  "type": "object",
+  "properties": {
+    "files_scanned": {
+      "type": "number",
+      "description": "Number of files scanned"
+    },
+    "files_cleaned": {
+      "type": "number",
+      "description": "Number of files cleaned"
+    },
+    "space_freed_mb": {
+      "type": "number",
+      "description": "Space freed in megabytes"
+    },
+    "session_duration_minutes": {
+      "type": "number",
+      "description": "Duration of cleaning session"
+    },
+    "categories_organized": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Categories that were organized"
+    },
+    "mood_after": {
+      "type": "string",
+      "enum": ["refreshed", "accomplished", "peaceful", "energized"],
+      "description": "How the user felt after cleaning"
+    }
+  },
+  "required": []
+}

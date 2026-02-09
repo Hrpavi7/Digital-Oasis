@@ -1,0 +1,29 @@
+{
+  "name": "ChatMessage",
+  "type": "object",
+  "properties": {
+    "user_email": {
+      "type": "string",
+      "description": "Email of the user"
+    },
+    "message": {
+      "type": "string",
+      "description": "User's message"
+    },
+    "response": {
+      "type": "string",
+      "description": "AI assistant's response"
+    },
+    "message_type": {
+      "type": "string",
+      "enum": ["question", "tip", "recommendation", "navigation"],
+      "default": "question",
+      "description": "Type of message"
+    },
+    "context": {
+      "type": "object",
+      "description": "Additional context for the message"
+    }
+  },
+  "required": []
+}

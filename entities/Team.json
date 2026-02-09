@@ -1,0 +1,41 @@
+{
+  "name": "Team",
+  "type": "object",
+  "properties": {
+    "team_name": {
+      "type": "string",
+      "description": "Name of the team"
+    },
+    "description": {
+      "type": "string",
+      "description": "Team description"
+    },
+    "team_leader": {
+      "type": "string",
+      "description": "Email of team leader"
+    },
+    "members": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Array of member emails"
+    },
+    "total_points": {
+      "type": "number",
+      "default": 0,
+      "description": "Combined team points"
+    },
+    "team_level": {
+      "type": "number",
+      "default": 1,
+      "description": "Team level"
+    },
+    "team_icon": {
+      "type": "string",
+      "default": "\ud83c\udf1f",
+      "description": "Team icon/emoji"
+    }
+  },
+  "required": []
+}

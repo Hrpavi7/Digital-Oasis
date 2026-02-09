@@ -1,0 +1,65 @@
+{
+  "name": "AutomationRule",
+  "type": "object",
+  "properties": {
+    "rule_name": {
+      "type": "string",
+      "description": "Name of the automation rule"
+    },
+    "description": {
+      "type": "string",
+      "description": "What this rule does"
+    },
+    "rule_type": {
+      "type": "string",
+      "enum": [
+        "auto_archive",
+        "auto_compress",
+        "auto_delete",
+        "auto_organize",
+        "auto_backup"
+      ],
+      "description": "Type of automation"
+    },
+    "trigger_conditions": {
+      "type": "object",
+      "description": "Conditions that trigger this rule"
+    },
+    "action_details": {
+      "type": "object",
+      "description": "Details of action to perform"
+    },
+    "risk_level": {
+      "type": "string",
+      "enum": ["low", "medium", "high"],
+      "default": "low",
+      "description": "Risk level of automation"
+    },
+    "requires_confirmation": {
+      "type": "boolean",
+      "default": true,
+      "description": "Whether to ask before executing"
+    },
+    "is_active": {
+      "type": "boolean",
+      "default": true,
+      "description": "Whether rule is active"
+    },
+    "ai_learned": {
+      "type": "boolean",
+      "default": false,
+      "description": "Whether AI created this rule"
+    },
+    "execution_count": {
+      "type": "number",
+      "default": 0,
+      "description": "How many times executed"
+    },
+    "last_executed": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Last execution timestamp"
+    }
+  },
+  "required": []
+}

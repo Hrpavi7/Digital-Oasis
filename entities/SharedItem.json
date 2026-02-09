@@ -1,0 +1,42 @@
+{
+  "name": "SharedItem",
+  "type": "object",
+  "properties": {
+    "item_name": {
+      "type": "string",
+      "description": "Name of the shared file or folder"
+    },
+    "item_type": {
+      "type": "string",
+      "enum": ["file", "folder"],
+      "description": "Type of shared item"
+    },
+    "shared_by": {
+      "type": "string",
+      "description": "Email of user who shared the item"
+    },
+    "shared_with": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Array of emails of users with access"
+    },
+    "permission_level": {
+      "type": "string",
+      "enum": ["view", "edit", "comment"],
+      "default": "view",
+      "description": "Permission level for shared users"
+    },
+    "share_link": {
+      "type": "string",
+      "description": "Unique share link for the item"
+    },
+    "expires_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When the share link expires"
+    }
+  },
+  "required": []
+}

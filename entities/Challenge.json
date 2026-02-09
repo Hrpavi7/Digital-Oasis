@@ -1,0 +1,56 @@
+{
+  "name": "Challenge",
+  "type": "object",
+  "properties": {
+    "challenge_name": {
+      "type": "string",
+      "description": "Name of the challenge"
+    },
+    "description": {
+      "type": "string",
+      "description": "Description of what needs to be done"
+    },
+    "challenge_type": {
+      "type": "string",
+      "enum": ["weekly", "monthly", "special"],
+      "description": "Type of challenge"
+    },
+    "target_metric": {
+      "type": "string",
+      "description": "What to measure (files_cleaned, folders_organized, etc.)"
+    },
+    "target_value": {
+      "type": "number",
+      "description": "Goal value to achieve"
+    },
+    "bonus_points": {
+      "type": "number",
+      "description": "Bonus points for completing"
+    },
+    "badge_icon": {
+      "type": "string",
+      "description": "Icon for the challenge badge"
+    },
+    "starts_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When challenge starts"
+    },
+    "ends_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When challenge ends"
+    },
+    "is_team_challenge": {
+      "type": "boolean",
+      "default": false,
+      "description": "Whether this is a team challenge"
+    },
+    "is_active": {
+      "type": "boolean",
+      "default": true,
+      "description": "Whether challenge is currently active"
+    }
+  },
+  "required": []
+}

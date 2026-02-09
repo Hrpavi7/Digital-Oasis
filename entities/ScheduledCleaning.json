@@ -1,0 +1,55 @@
+{
+  "name": "ScheduledCleaning",
+  "type": "object",
+  "properties": {
+    "schedule_name": {
+      "type": "string",
+      "description": "Name of the scheduled cleaning"
+    },
+    "frequency": {
+      "type": "string",
+      "enum": ["daily", "weekly", "monthly", "custom"],
+      "description": "How often to run the cleaning"
+    },
+    "day_of_week": {
+      "type": "string",
+      "enum": [
+        "monday",
+        "tuesday",
+        "wednesday",
+        "thursday",
+        "friday",
+        "saturday",
+        "sunday"
+      ],
+      "description": "Day of week for weekly schedules"
+    },
+    "time_of_day": {
+      "type": "string",
+      "description": "Time to run the cleaning (HH:MM format)"
+    },
+    "rules_to_apply": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "IDs of rules to apply in this schedule"
+    },
+    "is_active": {
+      "type": "boolean",
+      "default": true,
+      "description": "Whether the schedule is currently active"
+    },
+    "last_run": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Last time this schedule ran"
+    },
+    "next_run": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Next scheduled run time"
+    }
+  },
+  "required": []
+}

@@ -1,0 +1,42 @@
+{
+  "name": "CleaningRule",
+  "type": "object",
+  "properties": {
+    "rule_name": {
+      "type": "string",
+      "description": "Name of the cleaning rule"
+    },
+    "file_extension": {
+      "type": "string",
+      "description": "File extension to target (e.g., .tmp, .log)"
+    },
+    "older_than_days": {
+      "type": "number",
+      "description": "Target files older than X days"
+    },
+    "larger_than_mb": {
+      "type": "number",
+      "description": "Target files larger than X MB"
+    },
+    "folder_path": {
+      "type": "string",
+      "description": "Specific folder path to scan"
+    },
+    "action": {
+      "type": "string",
+      "enum": ["delete", "compress", "archive"],
+      "default": "delete",
+      "description": "Action to take on matching files"
+    },
+    "archive_location": {
+      "type": "string",
+      "description": "Location to move archived files"
+    },
+    "is_active": {
+      "type": "boolean",
+      "default": true,
+      "description": "Whether the rule is currently active"
+    }
+  },
+  "required": []
+}

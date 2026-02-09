@@ -1,0 +1,42 @@
+{
+  "name": "BackupHistory",
+  "type": "object",
+  "properties": {
+    "backup_config_id": {
+      "type": "string",
+      "description": "ID of backup configuration"
+    },
+    "backup_type": {
+      "type": "string",
+      "enum": ["full", "incremental", "differential"],
+      "description": "Type of backup performed"
+    },
+    "status": {
+      "type": "string",
+      "enum": ["success", "failed", "in_progress"],
+      "default": "in_progress",
+      "description": "Status of backup"
+    },
+    "files_backed_up": {
+      "type": "number",
+      "description": "Number of files backed up"
+    },
+    "size_mb": {
+      "type": "number",
+      "description": "Size of backup in MB"
+    },
+    "duration_seconds": {
+      "type": "number",
+      "description": "How long backup took"
+    },
+    "backup_location": {
+      "type": "string",
+      "description": "Where backup was stored"
+    },
+    "error_message": {
+      "type": "string",
+      "description": "Error message if backup failed"
+    }
+  },
+  "required": []
+}

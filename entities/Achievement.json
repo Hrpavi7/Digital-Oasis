@@ -1,0 +1,29 @@
+{
+  "name": "Achievement",
+  "type": "object",
+  "properties": {
+    "badge_name": {
+      "type": "string",
+      "description": "Name of the achievement badge"
+    },
+    "badge_icon": {
+      "type": "string",
+      "description": "Icon identifier for the badge"
+    },
+    "description": {
+      "type": "string",
+      "description": "Description of the achievement"
+    },
+    "earned_date": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When the achievement was earned"
+    },
+    "category": {
+      "type": "string",
+      "enum": ["cleaning", "organizing", "consistency", "milestone"],
+      "description": "Category of achievement"
+    }
+  },
+  "required": []
+}
