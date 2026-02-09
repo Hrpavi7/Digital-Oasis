@@ -3,17 +3,7 @@ import { base44 } from "@/api/base44Client";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import {
-  Sparkles,
-  Brain,
-  Wand2,
-  FolderTree,
-  FileText,
-  Loader2,
-  Tag,
-  Archive,
-  Calendar,
-} from "lucide-react";
+import { Sparkles, Brain, Wand2, FolderTree, FileText, Loader2, Tag, Archive, Calendar, } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const SAMPLE_FILES = [
@@ -282,7 +272,6 @@ Return JSON:
                 and compression. 🌟
               </p>
             </div>
-
             <Button
               onClick={analyzeFiles}
               disabled={isAnalyzing}
@@ -301,7 +290,6 @@ Return JSON:
                 </>
               )}
             </Button>
-
             <div className="pt-6 border-t">
               <p className="text-sm text-gray-500">
                 Analyzing {SAMPLE_FILES.length} files with advanced content
@@ -311,7 +299,6 @@ Return JSON:
           </CardContent>
         </Card>
       )}
-
       <AnimatePresence>
         {analysis && (
           <motion.div
@@ -319,7 +306,6 @@ Return JSON:
             animate={{ opacity: 1, y: 0 }}
             className="space-y-6"
           >
-            {/* Suggested Folders */}
             <Card className="border-none shadow-xl">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
@@ -361,8 +347,6 @@ Return JSON:
                 </div>
               </CardContent>
             </Card>
-
-            {/* Yearly Archive */}
             {analysis.yearly_archive?.enabled && (
               <Card className="border-none shadow-xl bg-gradient-to-br from-amber-50 to-orange-50">
                 <CardHeader>
@@ -390,9 +374,6 @@ Return JSON:
                 </CardContent>
               </Card>
             )}
-
-            {/* Continue with rest of the component... */}
-            {/* File Groups */}
             <Card className="border-none shadow-xl">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
@@ -454,7 +435,10 @@ Return JSON:
               </CardContent>
             </Card>
 
-            {/* Auto-Tags */}
+            {/*
+             now why in the world is this file more than 400 lines? peter? did you do it?
+             idk
+             */}
             {analysis.tags && analysis.tags.length > 0 && (
               <Card className="border-none shadow-xl">
                 <CardHeader>
@@ -492,8 +476,6 @@ Return JSON:
                 </CardContent>
               </Card>
             )}
-
-            {/* Archive & Compress Suggestions */}
             <div className="grid md:grid-cols-2 gap-6">
               {analysis.archive_suggestions &&
                 analysis.archive_suggestions.length > 0 && (
@@ -526,7 +508,6 @@ Return JSON:
                     </CardContent>
                   </Card>
                 )}
-
               {analysis.compress_suggestions &&
                 analysis.compress_suggestions.length > 0 && (
                   <Card className="border-none shadow-xl">
@@ -559,8 +540,6 @@ Return JSON:
                   </Card>
                 )}
             </div>
-
-            {/* Smart Renames with Content */}
             <Card className="border-none shadow-xl">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
@@ -613,8 +592,6 @@ Return JSON:
                 </div>
               </CardContent>
             </Card>
-
-            {/* Apply Button */}
             <div className="flex justify-center gap-4">
               <Button
                 variant="outline"

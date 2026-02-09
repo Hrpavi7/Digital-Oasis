@@ -5,28 +5,9 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
-import {
-  Users,
-  TrendingUp,
-  AlertTriangle,
-  CheckCircle,
-  Clock,
-  MessageSquare,
-  Sparkles,
-  Loader2,
-} from "lucide-react";
+import { Users, TrendingUp, AlertTriangle, CheckCircle, Clock, MessageSquare, Sparkles, Loader2, } from "lucide-react";
 import { motion } from "framer-motion";
-import {
-  BarChart,
-  Bar,
-  XAxis,
-  YAxis,
-  CartesianGrid,
-  Tooltip,
-  ResponsiveContainer,
-  LineChart,
-  Line,
-} from "recharts";
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, LineChart, Line, } from "recharts";
 
 export default function CollaborationAnalytics({ user }) {
   const [isAnalyzing, setIsAnalyzing] = useState(false);
@@ -483,7 +464,6 @@ Analyze and provide JSON:
         </motion.div>
       )}
 
-      {/* Activity Chart */}
       {activityChartData.length > 0 && (
         <Card className="border-none shadow-xl">
           <CardHeader>

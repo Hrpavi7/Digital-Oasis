@@ -17,7 +17,6 @@ export default function TeamManager({ user }) {
     description: "",
     team_icon: "🌟",
   });
-
   const queryClient = useQueryClient();
 
   const { data: teams } = useQuery({
@@ -50,7 +49,7 @@ export default function TeamManager({ user }) {
     },
   });
 
-  const ICON_OPTIONS = ["🌟", "🚀", "🔥", "⚡", "🎯", "💎", "🌈", "🎨"];
+  const ICON_OPTIONS = ["🌟", "🚀", "🔥", "⚡", "🎯", "💎", "🌈", "🎨"]; // :insert tiktok emoji peter: Petah?
 
   return (
     <div className="space-y-6">
@@ -71,7 +70,6 @@ export default function TeamManager({ user }) {
             </Button>
           </div>
         </CardHeader>
-
         <CardContent>
           <AnimatePresence>
             {showCreateForm && (
@@ -93,7 +91,6 @@ export default function TeamManager({ user }) {
                         placeholder="e.g., Digital Warriors"
                       />
                     </div>
-
                     <div>
                       <Label>Description</Label>
                       <Textarea
@@ -108,7 +105,6 @@ export default function TeamManager({ user }) {
                         rows={3}
                       />
                     </div>
-
                     <div>
                       <Label>Team Icon</Label>
                       <div className="flex gap-2 mt-2">
@@ -129,7 +125,6 @@ export default function TeamManager({ user }) {
                         ))}
                       </div>
                     </div>
-
                     <div className="flex gap-3">
                       <Button
                         variant="outline"
@@ -151,7 +146,6 @@ export default function TeamManager({ user }) {
               </motion.div>
             )}
           </AnimatePresence>
-
           {teams.length === 0 ? (
             <p className="text-center text-gray-500 py-8">
               No teams yet. Create one to compete together!
@@ -179,7 +173,6 @@ export default function TeamManager({ user }) {
                         </div>
                       </div>
                     </div>
-
                     <div className="grid grid-cols-3 gap-3 mb-3">
                       <div className="p-2 bg-purple-50 rounded-lg text-center">
                         <Users className="w-4 h-4 mx-auto mb-1 text-purple-600" />
@@ -203,7 +196,6 @@ export default function TeamManager({ user }) {
                         </p>
                       </div>
                     </div>
-
                     <div className="flex flex-wrap gap-2">
                       {team.members?.slice(0, 5).map((member, idx) => (
                         <Badge key={idx} variant="secondary">

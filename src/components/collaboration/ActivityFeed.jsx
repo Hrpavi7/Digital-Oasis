@@ -3,14 +3,7 @@ import { useQuery } from "@tanstack/react-query";
 import { base44 } from "@/api/base44Client";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import {
-  FileEdit,
-  MessageSquare,
-  Share2,
-  Trash2,
-  FileText,
-  Clock,
-} from "lucide-react";
+import { FileEdit, MessageSquare, Share2, Trash2, FileText, Clock, } from "lucide-react";
 import { motion } from "framer-motion";
 import { format } from "date-fns";
 

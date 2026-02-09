@@ -52,7 +52,6 @@ Return as JSON array of objects with "name" and "reason" properties.`;
           },
         },
       });
-
       setSuggestions(result.suggestions || []);
     } catch (error) {
       console.error("Error generating names:", error);
@@ -82,7 +81,6 @@ Return as JSON array of objects with "name" and "reason" properties.`;
               className="text-base"
             />
           </div>
-
           <div>
             <label className="text-sm font-medium text-gray-700 mb-2 block">
               Context (optional)
@@ -94,7 +92,6 @@ Return as JSON array of objects with "name" and "reason" properties.`;
               className="text-base"
             />
           </div>
-
           <Button
             onClick={generateNames}
             disabled={!fileName.trim() || isGenerating}
@@ -114,7 +111,6 @@ Return as JSON array of objects with "name" and "reason" properties.`;
           </Button>
         </CardContent>
       </Card>
-
       <AnimatePresence>
         {suggestions.length > 0 && (
           <motion.div
@@ -184,7 +180,6 @@ Return as JSON array of objects with "name" and "reason" properties.`;
           </motion.div>
         )}
       </AnimatePresence>
-
       <Card className="border-none shadow-lg bg-gradient-to-r from-lavender-100 to-cyan-100">
         <CardContent className="p-6">
           <p className="text-sm text-gray-700 italic text-center">

@@ -64,7 +64,6 @@ export default function GamificationDashboard({ user }) {
               </p>
             </div>
           </div>
-
           <div className="space-y-2">
             <div className="flex justify-between text-sm">
               <span className="text-gray-600">
@@ -76,7 +75,6 @@ export default function GamificationDashboard({ user }) {
             </div>
             <Progress value={currentLevelProgress} className="h-3" />
           </div>
-
           <div className="grid grid-cols-2 gap-4">
             <div className="p-4 bg-white rounded-xl">
               <div className="flex items-center gap-2 mb-2">
@@ -99,8 +97,6 @@ export default function GamificationDashboard({ user }) {
           </div>
         </CardContent>
       </Card>
-
-      {/* Leaderboard */}
       <Card className="border-none shadow-xl">
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
@@ -156,8 +152,6 @@ export default function GamificationDashboard({ user }) {
           </div>
         </CardContent>
       </Card>
-
-      {/* Point Earning Guide */}
       <Card className="border-none shadow-lg bg-gradient-to-br from-purple-50 to-pink-50">
         <CardHeader>
           <CardTitle className="flex items-center gap-2">

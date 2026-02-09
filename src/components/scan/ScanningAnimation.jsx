@@ -24,7 +24,6 @@ export default function ScanningAnimation({ progress }) {
           >
             <Sparkles className="w-16 h-16 text-lavender-700" />
           </motion.div>
-
           <h2 className="text-3xl font-bold text-gray-900">
             Scanning Your Space
           </h2>
@@ -32,7 +31,6 @@ export default function ScanningAnimation({ progress }) {
             Gently looking through your files with care...
           </p>
         </div>
-
         <div className="space-y-4">
           <div className="flex justify-between text-sm">
             <span className="text-gray-600">Progress</span>
@@ -40,7 +38,6 @@ export default function ScanningAnimation({ progress }) {
           </div>
           <Progress value={progress} className="h-3" />
         </div>
-
         <div className="flex justify-center gap-6">
           {icons.map((Icon, index) => (
             <motion.div
@@ -54,10 +51,9 @@ export default function ScanningAnimation({ progress }) {
             </motion.div>
           ))}
         </div>
-
         <div className="text-center">
           <p className="text-sm text-gray-500 italic">
-            "Patience is the companion of wisdom." 🌿
+            "Patience is the companion of wisdom." 🌿 {/*some ass shit? */}
           </p>
         </div>
       </CardContent>

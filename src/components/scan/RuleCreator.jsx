@@ -4,13 +4,7 @@ import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue, } from "@/components/ui/select";
 import { Switch } from "@/components/ui/switch";
 import { Card, CardContent } from "@/components/ui/card";
 import { Plus, Trash2, Filter, Sparkles } from "lucide-react";
@@ -38,15 +32,12 @@ export default function RuleCreator({ onApplyRules }) {
     is_active: true,
   });
   const [customExtension, setCustomExtension] = useState("");
-
   const queryClient = useQueryClient();
-
   const { data: rules } = useQuery({
     queryKey: ["cleaningRules"],
     queryFn: () => base44.entities.CleaningRule.list(),
     initialData: [],
   });
-
   const createRule = useMutation({
     mutationFn: (ruleData) => base44.entities.CleaningRule.create(ruleData),
     onSuccess: () => {
@@ -64,14 +55,12 @@ export default function RuleCreator({ onApplyRules }) {
       setCustomExtension("");
     },
   });
-
   const deleteRule = useMutation({
     mutationFn: (ruleId) => base44.entities.CleaningRule.delete(ruleId),
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["cleaningRules"] });
     },
   });
-
   const toggleRule = useMutation({
     mutationFn: ({ id, is_active }) =>
       base44.entities.CleaningRule.update(id, { is_active }),
@@ -79,7 +68,6 @@ export default function RuleCreator({ onApplyRules }) {
       queryClient.invalidateQueries({ queryKey: ["cleaningRules"] });
     },
   });
-
   const handleSubmit = (e) => {
     e.preventDefault();
     const finalExtension =
@@ -91,7 +79,6 @@ export default function RuleCreator({ onApplyRules }) {
       file_extension: finalExtension,
     });
   };
-
   return (
     <div className="space-y-6">
       <div className="flex justify-between items-center">
@@ -110,7 +97,6 @@ export default function RuleCreator({ onApplyRules }) {
           New Rule
         </Button>
       </div>
-
       <AnimatePresence>
         {showForm && (
           <motion.div
@@ -133,7 +119,6 @@ export default function RuleCreator({ onApplyRules }) {
                       required
                     />
                   </div>
-
                   <div>
                     <Label htmlFor="file_extension">File Type</Label>
                     <Select
@@ -163,7 +148,6 @@ export default function RuleCreator({ onApplyRules }) {
                       />
                     )}
                   </div>
-
                   <div className="grid grid-cols-2 gap-4">
                     <div>
                       <Label htmlFor="older_than_days">Older Than (days)</Label>
@@ -196,7 +180,6 @@ export default function RuleCreator({ onApplyRules }) {
                       />
                     </div>
                   </div>
-
                   <div>
                     <Label htmlFor="folder_path">Folder Path (optional)</Label>
                     <Input
@@ -208,7 +191,6 @@ export default function RuleCreator({ onApplyRules }) {
                       placeholder="e.g., /Downloads or leave empty for all folders"
                     />
                   </div>
-
                   <div>
                     <Label htmlFor="action">Action</Label>
                     <Select
@@ -227,7 +209,6 @@ export default function RuleCreator({ onApplyRules }) {
                       </SelectContent>
                     </Select>
                   </div>
-
                   <div className="flex justify-end gap-3 pt-4">
                     <Button
                       type="button"
@@ -251,8 +232,6 @@ export default function RuleCreator({ onApplyRules }) {
           </motion.div>
         )}
       </AnimatePresence>
-
-      {/* Existing Rules */}
       <div className="space-y-3">
         {rules.length === 0 ? (
           <div className="text-center p-8 bg-gray-50 rounded-xl border border-dashed border-gray-300">
@@ -327,7 +306,6 @@ export default function RuleCreator({ onApplyRules }) {
           ))
         )}
       </div>
-
       {rules.length > 0 && (
         <Button
           onClick={() => onApplyRules(rules.filter((r) => r.is_active))}

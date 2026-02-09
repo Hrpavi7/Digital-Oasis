@@ -4,13 +4,7 @@ import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue, } from "@/components/ui/select";
 import { Switch } from "@/components/ui/switch";
 import { Card, CardContent } from "@/components/ui/card";
 import { Plus, Trash2, Calendar, Clock, Sparkles } from "lucide-react";
@@ -42,21 +36,17 @@ export default function ScheduleManager() {
     time_of_day: "10:00",
     is_active: true,
   });
-
   const queryClient = useQueryClient();
-
   const { data: schedules } = useQuery({
     queryKey: ["scheduledCleanings"],
     queryFn: () => base44.entities.ScheduledCleaning.list(),
     initialData: [],
   });
-
   const { data: rules } = useQuery({
     queryKey: ["cleaningRules"],
     queryFn: () => base44.entities.CleaningRule.list(),
     initialData: [],
   });
-
   const createSchedule = useMutation({
     mutationFn: (scheduleData) => {
       // Calculate next run time
@@ -96,7 +86,6 @@ export default function ScheduleManager() {
       });
     },
   });
-
   const deleteSchedule = useMutation({
     mutationFn: (scheduleId) =>
       base44.entities.ScheduledCleaning.delete(scheduleId),
@@ -104,7 +93,6 @@ export default function ScheduleManager() {
       queryClient.invalidateQueries({ queryKey: ["scheduledCleanings"] });
     },
   });
-
   const toggleSchedule = useMutation({
     mutationFn: ({ id, is_active }) =>
       base44.entities.ScheduledCleaning.update(id, { is_active }),
@@ -112,7 +100,6 @@ export default function ScheduleManager() {
       queryClient.invalidateQueries({ queryKey: ["scheduledCleanings"] });
     },
   });
-
   const handleSubmit = (e) => {
     e.preventDefault();
     createSchedule.mutate(newSchedule);
@@ -138,7 +125,6 @@ export default function ScheduleManager() {
           New Schedule
         </Button>
       </div>
-
       <AnimatePresence>
         {showForm && (
           <motion.div
@@ -164,7 +150,6 @@ export default function ScheduleManager() {
                       required
                     />
                   </div>
-
                   <div>
                     <Label htmlFor="frequency">Frequency</Label>
                     <Select
@@ -185,7 +170,6 @@ export default function ScheduleManager() {
                       </SelectContent>
                     </Select>
                   </div>
-
                   {newSchedule.frequency === "weekly" && (
                     <div>
                       <Label htmlFor="day_of_week">Day of Week</Label>
@@ -208,7 +192,6 @@ export default function ScheduleManager() {
                       </Select>
                     </div>
                   )}
-
                   <div>
                     <Label htmlFor="time_of_day">Time of Day</Label>
                     <Input
@@ -224,7 +207,6 @@ export default function ScheduleManager() {
                       required
                     />
                   </div>
-
                   <div className="p-4 bg-blue-100 rounded-lg border border-blue-200">
                     <p className="text-sm text-blue-900">
                       <strong>Note:</strong> This schedule will apply all your
@@ -234,7 +216,6 @@ export default function ScheduleManager() {
                         : " (create some rules first!)"}
                     </p>
                   </div>
-
                   <div className="flex justify-end gap-3 pt-4">
                     <Button
                       type="button"
@@ -258,8 +239,6 @@ export default function ScheduleManager() {
           </motion.div>
         )}
       </AnimatePresence>
-
-      {/* Existing Schedules */}
       <div className="space-y-3">
         {schedules.length === 0 ? (
           <div className="text-center p-8 bg-gray-50 rounded-xl border border-dashed border-gray-300">
