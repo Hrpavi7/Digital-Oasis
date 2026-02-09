@@ -153,7 +153,6 @@ Provide a JSON response with:
 
   return (
     <div className="space-y-6">
-      {/* Controls */}
       <Card className="border-none shadow-xl bg-gradient-to-r from-purple-50 to-pink-50">
         <CardContent className="p-6">
           <div className="flex flex-wrap items-center justify-between gap-4">
@@ -206,8 +205,6 @@ Provide a JSON response with:
           </div>
         </CardContent>
       </Card>
-
-      {/* AI Insights */}
       {aiInsights && (
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -281,10 +278,7 @@ Provide a JSON response with:
           </Card>
         </motion.div>
       )}
-
-      {/* Charts Grid */}
       <div className="grid md:grid-cols-2 gap-6">
-        {/* Cleaning History */}
         <Card className="border-none shadow-xl">
           <CardHeader>
             <CardTitle className="flex items-center gap-2 text-lg">
@@ -322,8 +316,6 @@ Provide a JSON response with:
             </ResponsiveContainer>
           </CardContent>
         </Card>
-
-        {/* File Type Distribution */}
         <Card className="border-none shadow-xl">
           <CardHeader>
             <CardTitle className="flex items-center gap-2 text-lg">
@@ -358,8 +350,6 @@ Provide a JSON response with:
             </ResponsiveContainer>
           </CardContent>
         </Card>
-
-        {/* Space Freed Over Time */}
         <Card className="border-none shadow-xl">
           <CardHeader>
             <CardTitle className="flex items-center gap-2 text-lg">
@@ -386,8 +376,6 @@ Provide a JSON response with:
             </ResponsiveContainer>
           </CardContent>
         </Card>
-
-        {/* Achievements by Category */}
         {achievementData.length > 0 && (
           <Card className="border-none shadow-xl">
             <CardHeader>

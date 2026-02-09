@@ -292,8 +292,6 @@ Maintain the core message but adjust the language, word choice, and style to mat
             </Button>
           </TabsContent>
         </Tabs>
-
-        {/* Results */}
         <AnimatePresence>
           {result && (
             <motion.div

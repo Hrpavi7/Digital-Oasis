@@ -132,7 +132,6 @@ Return JSON:
 
   return (
     <div className="space-y-6">
-      {/* AI Suggestions */}
       {!aiSuggestions && (
         <Card className="border-none shadow-xl bg-gradient-to-br from-blue-50 to-cyan-50">
           <CardContent className="p-6 text-center">
@@ -241,8 +240,6 @@ Return JSON:
           </motion.div>
         )}
       </AnimatePresence>
-
-      {/* Active Backups */}
       <Card className="border-none shadow-xl">
         <CardHeader>
           <div className="flex items-center justify-between">
@@ -446,8 +443,6 @@ Return JSON:
           </div>
         </CardContent>
       </Card>
-
-      {/* Backup History */}
       {history.length > 0 && (
         <Card className="border-none shadow-xl">
           <CardHeader>

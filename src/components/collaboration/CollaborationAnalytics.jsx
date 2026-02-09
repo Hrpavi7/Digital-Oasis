@@ -167,7 +167,6 @@ Analyze and provide JSON:
 
   return (
     <div className="space-y-6">
-      {/* Header with Analyze Button */}
       <Card className="border-none shadow-xl bg-gradient-to-r from-blue-50 to-cyan-50">
         <CardContent className="p-6">
           <div className="flex items-center justify-between">

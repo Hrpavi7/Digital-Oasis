@@ -178,7 +178,6 @@ Make templates practical, actionable, and tailored to the user's actual usage pa
 
   return (
     <div className="space-y-6">
-      {/* Header */}
       <Card className="border-none shadow-xl bg-gradient-to-r from-purple-50 to-pink-50">
         <CardContent className="p-6">
           <div className="flex items-center justify-between">
@@ -213,8 +212,6 @@ Make templates practical, actionable, and tailored to the user's actual usage pa
           </div>
         </CardContent>
       </Card>
-
-      {/* Templates Grid */}
       {templates.length === 0 ? (
         <Card className="border-none shadow-lg">
           <CardContent className="p-12 text-center">
@@ -281,8 +278,6 @@ Make templates practical, actionable, and tailored to the user's actual usage pa
                         </div>
                       )}
                     </div>
-
-                    {/* Workflow Steps */}
                     <div className="bg-white/60 rounded-lg p-4 space-y-2">
                       <h4 className="font-semibold text-gray-900 text-sm mb-2">
                         Workflow Steps:

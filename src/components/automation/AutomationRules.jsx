@@ -160,7 +160,6 @@ Return JSON with up to 5 most relevant suggestions.`;
 
   return (
     <div className="space-y-6">
-      {/* AI Suggestions */}
       {!aiSuggestions && (
         <Card className="border-none shadow-xl bg-gradient-to-br from-purple-50 to-pink-50">
           <CardContent className="p-6 text-center">
@@ -248,8 +247,6 @@ Return JSON with up to 5 most relevant suggestions.`;
           </motion.div>
         )}
       </AnimatePresence>
-
-      {/* Manual Rule Creation */}
       <Card className="border-none shadow-xl">
         <CardHeader>
           <div className="flex items-center justify-between">
@@ -392,7 +389,6 @@ Return JSON with up to 5 most relevant suggestions.`;
             )}
           </AnimatePresence>
 
-          {/* Existing Rules */}
           <div className="space-y-3">
             {rules.length === 0 ? (
               <p className="text-center text-gray-500 py-8">

@@ -167,11 +167,8 @@ export default function Layout({ children, currentPageName }) {
               </h1>
             </div>
           </header>
-
           <div className="flex-1 overflow-auto">{children}</div>
         </main>
-
-        {/* Floating AI Chatbot Button */}
         {!chatbotOpen && (
           <Button
             onClick={() => setChatbotOpen(true)}
@@ -181,8 +178,6 @@ export default function Layout({ children, currentPageName }) {
             <MessageCircle className="w-6 h-6 text-white" />
           </Button>
         )}
-
-        {/* AI Chatbot */}
         <AnimatePresence>
           {chatbotOpen && (
             <AIChatbot
